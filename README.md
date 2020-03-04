@@ -3,6 +3,12 @@
 
 ## Usage
 
+1. Install [Vue CLI](https://cli.vuejs.org/) to access `vue` command:
+
+```bash
+yarn global add @vue/cli
+```
+
 1. Initialize your Vue project with this command:
 
 ```bash
