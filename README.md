@@ -9,7 +9,7 @@
 yarn global add @vue/cli
 ```
 
-1. Initialize your Vue project with this command:
+2. Initialize your Vue project with this command:
 
 ```bash
 vue create --preset santospatrick/vue-cli-preset my-project
