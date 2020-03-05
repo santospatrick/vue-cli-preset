@@ -15,6 +15,13 @@ yarn global add @vue/cli
 vue create --preset santospatrick/vue-cli-preset my-project
 ```
 
+## Development
+
+```
+git checkout develop
+vue create --preset ./vue-cli-preset my-project
+```
+
 ## Read more
 
 - [Custom Remote Presets](https://cli.vuejs.org/guide/plugins-and-presets.html#remote-presets)
