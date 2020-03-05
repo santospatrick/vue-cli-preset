@@ -1,3 +1,3 @@
-module.exports = api => {
-    api.render('./template');
+module.exports = (api, { preset = 'base' }) => {
+    api.render(`./template/${preset}`);
 }
