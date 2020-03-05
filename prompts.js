@@ -9,8 +9,7 @@ module.exports = [
                 value: 'base'
             },
             {
-                disabled: true,
-                name: 'Admin (em breve)',
+                name: 'Admin',
                 value: 'admin'
             }
         ],
