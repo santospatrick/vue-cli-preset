@@ -9,7 +9,18 @@
         "save"
       ]
     },
-    "@vue/cli-plugin-unit-jest": {}
+    "@vue/cli-plugin-unit-jest": {},
+    "vue-cli-plugin-vuetify": {
+      "preset": "configure",
+      "replaceComponents": false,
+      "useTheme": false,
+      "useCustomProperties": false,
+      "iconFont": "mdi",
+      "installFonts": false,
+      "useAlaCarte": true,
+      "usePolyfill": true,
+      "locale": "en"
+    }
   },
   "router": true,
   "routerHistoryMode": true,
