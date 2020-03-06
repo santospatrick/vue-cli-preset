@@ -15,6 +15,12 @@ yarn global add @vue/cli
 vue create --preset santospatrick/vue-cli-preset my-project
 ```
 
+## Features
+
+- [ ] Estrutura de diretórios
+- [ ] README.md | CONTRIBUTING.md
+- [ ] Tela de exemplo com CRUD
+
 ## Development
 
 ```
