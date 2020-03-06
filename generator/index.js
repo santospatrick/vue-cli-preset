@@ -11,4 +11,10 @@ module.exports = (api, { preset = 'base' }) => {
             }
         })
     });
+
+    api.extendPackage({
+        dependencies: {
+            axios: "^0.19.2"
+        }
+    })
 }
