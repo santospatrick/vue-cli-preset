@@ -1,17 +1,20 @@
+import Index from './Index.vue';
+import Form from './Form.vue';
+
 export default [
   {
     path: '/users',
     name: 'Usuários',
-    component: () => import(/* webpackChunkName: "usersIndex" */ './Index.vue'),
+    component: Index,
   },
   {
     path: '/users/new',
     name: 'Novos Usuários',
-    component: () => import(/* webpackChunkName: "usersForm" */ './Form.vue'),
+    component: Form,
   },
   {
     path: '/users/:id',
     name: 'Edição Usuários',
-    component: () => import(/* webpackChunkName: "usersForm" */ './Form.vue'),
+    component: Form,
   },
 ];
