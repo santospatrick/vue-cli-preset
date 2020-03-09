@@ -14,12 +14,16 @@
             <thead>
               <tr>
                 <th class="text-left">Name</th>
+                <th class="text-left">E-mail</th>
+                <th class="text-left">Empresa</th>
                 <th class="text-right">Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in list" :key="item.name">
                 <td>{{ item.name }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.company.name }}</td>
                 <td class="text-right">
                   <router-link :to="`/users/${item.id}`" v-slot="{ navigate }">
                     <v-btn @click="navigate" text icon>
