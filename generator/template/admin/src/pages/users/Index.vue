@@ -14,13 +14,13 @@
             <thead>
               <tr>
                 <th class="text-left">Name</th>
-                <th class="text-left">Ações</th>
+                <th class="text-right">Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in list" :key="item.name">
                 <td>{{ item.name }}</td>
-                <td>
+                <td class="text-right">
                   <router-link :to="`/users/${item.id}`" v-slot="{ navigate }">
                     <v-btn @click="navigate" text icon>
                       <!-- All icons: https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/services/icons/presets/mdi.ts -->
