@@ -72,6 +72,7 @@ export default {
         // ".patch()" pq o json-server é semântico.
         // Na vida real isso pode ser PUT sem problemas.
         await api.patch(`users/${id}`, values);
+        this.$router.push('/users');
       } finally {
         this.submitLoading = false;
       }
