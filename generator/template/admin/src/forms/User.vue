@@ -8,8 +8,34 @@
         >
           <v-text-field
             v-model="data.name"
-            :rules="nameRules"
+            :rules="rules"
             label="Nome"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="data.email"
+            :rules="emailRules"
+            label="E-mail"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="data.company.name"
+            :rules="rules"
+            label="Empresa"
             required
           ></v-text-field>
         </v-col>
@@ -21,6 +47,7 @@
         >
           <v-btn
             :disabled="!valid"
+            :loading="submitLoading"
             color="success"
             class="mr-4"
             type="submit"
@@ -42,15 +69,28 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    submitLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       valid: false,
       data: {
         name: this.user.name,
+        email: this.user.email,
+        company: {
+          // Optional Chaining: https://babeljs.io/docs/en/babel-plugin-proposal-optional-chaining
+          name: this.user.company?.name,
+        },
       },
-      nameRules: [
+      rules: [
         (v) => !!v || 'Campo obrigatório',
+      ],
+      emailRules: [
+        (v) => !!v || 'Campo obrigatório',
+        (v) => /.+@.+/.test(v) || 'E-mail inválido',
       ],
     };
   },

@@ -15,11 +15,24 @@ yarn global add @vue/cli
 vue create --preset santospatrick/vue-cli-preset my-project
 ```
 
+3. Choose your template
+
+4. Done :tada:
+
+## Template "admin" 
+
+Run your mock server with the following command:
+
+```bash
+yarn mock
+```
+
 ## Features
 
 - [x] App structure (base/admin)
 - [ ] README.md | CONTRIBUTING.md
 - [ ] CRUD example
+    - [x] Mock
     - [x] Form
     - [x] Routes
     - [ ] Vuex
