@@ -7,23 +7,9 @@
           md="4"
         >
           <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            type="password"
-            label="Password"
+            v-model="data.name"
+            :rules="nameRules"
+            label="Nome"
             required
           ></v-text-field>
         </v-col>
@@ -40,7 +26,7 @@
             type="submit"
             block
           >
-            Entrar
+            Salvar
           </v-btn>
         </v-col>
       </v-row>
@@ -50,17 +36,20 @@
 
 <script>
 export default {
-  name: 'ExampleForm',
+  name: 'UserForm',
+  props: {
+    user: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       valid: false,
-      email: '',
-      emailRules: [
-        (v) => !!v || 'Campo obrigatório',
-        (v) => /.+@.+/.test(v) || 'E-mail inválido',
-      ],
-      password: '',
-      passwordRules: [
+      data: {
+        name: this.user.name,
+      },
+      nameRules: [
         (v) => !!v || 'Campo obrigatório',
       ],
     };
@@ -69,7 +58,7 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       if (!this.valid) return;
-      this.$emit('submit', { email: this.email, password: this.password });
+      this.$emit('submit', this.data);
     },
   },
 };

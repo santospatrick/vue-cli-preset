@@ -17,9 +17,12 @@ vue create --preset santospatrick/vue-cli-preset my-project
 
 ## Features
 
-- [ ] Estrutura de diretórios
+- [x] App structure (base/admin)
 - [ ] README.md | CONTRIBUTING.md
-- [ ] Tela de exemplo com CRUD
+- [ ] CRUD example
+    - [x] Form
+    - [x] Routes
+    - [ ] Vuex
 
 ## Development
 
