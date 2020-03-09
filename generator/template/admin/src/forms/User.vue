@@ -21,6 +21,7 @@
         >
           <v-btn
             :disabled="!valid"
+            :loading="submitLoading"
             color="success"
             class="mr-4"
             type="submit"
@@ -41,6 +42,10 @@ export default {
     user: {
       type: Object,
       default: () => ({}),
+    },
+    submitLoading: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

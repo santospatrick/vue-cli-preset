@@ -20,6 +20,7 @@ vue create --preset santospatrick/vue-cli-preset my-project
 - [x] App structure (base/admin)
 - [ ] README.md | CONTRIBUTING.md
 - [ ] CRUD example
+    - [x] Mock
     - [x] Form
     - [x] Routes
     - [ ] Vuex

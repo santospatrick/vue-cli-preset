@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <v-container id="nav">
       <router-link to="/">Login</router-link> |
       <router-link to="/users">Users</router-link>
-    </div>
+    </v-container>
     <v-app>
       <router-view/>
     </v-app>
@@ -15,10 +15,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#nav {
-  padding: 30px;
 }
 
 #nav a {

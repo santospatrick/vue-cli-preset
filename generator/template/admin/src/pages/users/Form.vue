@@ -1,20 +1,15 @@
 <template>
-  <div :class="$style.container">
+  <div class="text-center">
     <h1>{{ title }}</h1>
-    <UserForm v-if="user.id" :user="user" @submit="onSubmit" />
+    <UserForm v-if="!loading" :user="user" :submit-loading="submitLoading" @submit="onSubmit" />
     <v-progress-circular
       v-else
+      class="mt-10"
       indeterminate
       color="primary"
     ></v-progress-circular>
   </div>
 </template>
-
-<style module>
-.container {
-  text-align: center;
-}
-</style>
 
 <script>
 import api from '@/services/api';
@@ -28,6 +23,8 @@ export default {
   data() {
     return {
       user: {},
+      loading: true,
+      submitLoading: false,
     };
   },
   mounted() {
@@ -35,18 +32,49 @@ export default {
   },
   computed: {
     title() {
-      return this.$route.params.id ? `Usuário: ${this.$route.params.id}` : 'Novo usuário';
+      return this.isNew ? 'Novo usuário' : `Usuário: ${this.$route.params.id}`;
+    },
+    isNew() {
+      return !this.$route.params.id;
     },
   },
   methods: {
     async getUser() {
       const { id } = this.$route.params;
-      if (!id) return;
-      const response = await api.get(`users/${id}`);
-      this.user = response.data;
+      if (!id) {
+        this.loading = false;
+        return;
+      }
+      try {
+        const response = await api.get(`users/${id}`);
+        this.user = response.data;
+      } finally {
+        this.loading = false;
+      }
     },
-    onSubmit(values) {
-      console.log('UserForm | values:', values);
+    async onSubmit(values) {
+      this.submitLoading = true;
+
+      // Novo cadastro
+      if (this.isNew) {
+        try {
+          const response = await api.post('users', values);
+          this.$router.push(`${response.data.id}`);
+        } finally {
+          this.submitLoading = false;
+        }
+        return;
+      }
+
+      // Edição de cadastro
+      try {
+        const { id } = this.$route.params;
+        // ".patch()" pq o json-server é semântico.
+        // Na vida real isso pode ser PUT sem problemas.
+        await api.patch(`users/${id}`, values);
+      } finally {
+        this.submitLoading = false;
+      }
     },
   },
 };
