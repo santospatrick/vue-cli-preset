@@ -17,9 +17,7 @@ export default {
   },
   async deleteItem({ commit }, { id, name }) {
     // eslint-disable-next-line
-    if (!window.confirm(`Deseja deletar "${name}"?`)) {
-      await Promise.reject();
-    }
+    if (!window.confirm(`Deseja deletar "${name}"?`)) return;
 
     await api.delete(`users/${id}`);
     commit('deleteItem', id);
