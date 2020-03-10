@@ -11,6 +11,9 @@ module.exports = (api, { preset = 'base' }) => {
             if (/^src\/router[/$]/.test(name)) {
                 delete files[name]
             }
+            if (/^src\/store[/$]/.test(name)) {
+                delete files[name]
+            }
 
             const appTemplateDirectory = `${__dirname}/template/${preset}/src/App.vue`;
 
