@@ -11,7 +11,7 @@ module.exports = (api, { preset = 'base' }) => {
             if (/^src\/router[/$]/.test(name)) {
                 delete files[name]
             }
-            if (/^src\/store[/$]/.test(name)) {
+            if (/^src\/store[/$]/.test(name) && preset === 'admin') {
                 delete files[name]
             }
 
