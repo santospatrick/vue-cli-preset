@@ -17,6 +17,8 @@ vue create --preset santospatrick/vue-cli-preset my-project
 
 3. Choose your template
 
+![Escolhas dentro da CLI](docs/choices.png)
+
 4. Done :tada:
 
 ## Template "admin" 
