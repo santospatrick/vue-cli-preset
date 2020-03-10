@@ -33,11 +33,11 @@ yarn mock
 
 - [x] App structure (base/admin)
 - [ ] README.md | CONTRIBUTING.md
-- [ ] CRUD example
+- [x] CRUD example
     - [x] Mock
     - [x] Form
     - [x] Routes
-    - [ ] Vuex
+    - [x] Vuex
 
 ## Development
 
