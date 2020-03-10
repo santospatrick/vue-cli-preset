@@ -45,7 +45,7 @@ export default {
     this.clearItem();
   },
   methods: {
-    ...mapActions('users', ['postItem', 'getRouteItem']),
+    ...mapActions('users', ['postItem', 'getRouteItem', 'putItem']),
     ...mapMutations('users', ['clearItem']),
     async getUser() {
       try {
