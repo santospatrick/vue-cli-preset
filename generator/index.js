@@ -30,15 +30,6 @@ module.exports = (api, { preset = 'base' }) => {
             "lint-staged": "^10.0.8",
             "json-server": "^0.16.1"
         },
-        gitHooks: {
-            "pre-commit": "lint-staged"
-        },
-        "lint-staged": {
-            "*.{js,vue}": [
-                "vue-cli-service lint",
-                "git add"
-            ]
-        },
         scripts: {
             "mock": "json-server --watch mock.json --delay 1000"
         }
