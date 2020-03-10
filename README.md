@@ -17,6 +17,8 @@ vue create --preset santospatrick/vue-cli-preset my-project
 
 3. Choose your template
 
+![Escolhas dentro da CLI](docs/choices.png)
+
 4. Done :tada:
 
 ## Template "admin" 
@@ -31,11 +33,11 @@ yarn mock
 
 - [x] App structure (base/admin)
 - [ ] README.md | CONTRIBUTING.md
-- [ ] CRUD example
+- [x] CRUD example
     - [x] Mock
     - [x] Form
     - [x] Routes
-    - [ ] Vuex
+    - [x] Vuex
 
 ## Development
 

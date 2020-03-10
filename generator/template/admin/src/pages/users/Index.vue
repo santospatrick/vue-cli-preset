@@ -20,10 +20,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in list" :key="item.name">
+              <tr v-for="item in list" :key="item.id">
                 <td>{{ item.name }}</td>
                 <td>{{ item.email }}</td>
-                <td>{{ item.company.name }}</td>
+                <td>{{ item.company && item.company.name }}</td>
                 <td class="text-right">
                   <router-link :to="`/users/${item.id}`" v-slot="{ navigate }">
                     <v-btn @click="navigate" text icon>
@@ -31,7 +31,7 @@
                       <v-icon>mdi-pencil</v-icon>
                     </v-btn>
                   </router-link>
-                  <v-btn @click="deleteUser(item)" text icon>
+                  <v-btn @click="deleteItem(item)" text icon>
                     <!-- All icons: https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/services/icons/presets/mdi.ts -->
                     <v-icon>mdi-delete</v-icon>
                   </v-btn>
@@ -46,30 +46,22 @@
 </template>
 
 <script>
-import api from '@/services/api';
+import { mapState, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'UsersIndex',
-  data() {
-    return {
-      list: [],
-    };
-  },
   mounted() {
-    this.getUsers();
+    this.getList();
+  },
+  beforeDestroy() {
+    this.clearList();
+  },
+  computed: {
+    ...mapState('users', ['list']),
   },
   methods: {
-    async getUsers() {
-      const response = await api.get('/users');
-      this.list = response.data;
-    },
-    async deleteUser({ name, id }) {
-      // eslint-disable-next-line
-      if (window.confirm(`Deseja deletar "${name}"?`)) {
-        await api.delete(`/users/${id}`);
-        this.list = this.list.filter((item) => item.id !== id);
-      }
-    },
+    ...mapActions('users', ['getList', 'deleteItem']),
+    ...mapMutations('users', ['clearList']),
   },
 };
 </script>

@@ -11,6 +11,9 @@ module.exports = (api, { preset = 'base' }) => {
             if (/^src\/router[/$]/.test(name)) {
                 delete files[name]
             }
+            if (/^src\/store[/$]/.test(name)) {
+                delete files[name]
+            }
 
             const appTemplateDirectory = `${__dirname}/template/${preset}/src/App.vue`;
 
@@ -29,15 +32,6 @@ module.exports = (api, { preset = 'base' }) => {
         devDependencies: {
             "lint-staged": "^10.0.8",
             "json-server": "^0.16.1"
-        },
-        gitHooks: {
-            "pre-commit": "lint-staged"
-        },
-        "lint-staged": {
-            "*.{js,vue}": [
-                "vue-cli-service lint",
-                "git add"
-            ]
         },
         scripts: {
             "mock": "json-server --watch mock.json --delay 1000"
