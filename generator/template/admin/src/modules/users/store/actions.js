@@ -1,4 +1,4 @@
-import api from '@/services/api';
+import api from '@/network/api';
 import router from '@/router';
 
 export default {
