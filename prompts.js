@@ -5,12 +5,13 @@ module.exports = [
         message: 'Qual template você deseja usar?',
         choices: [
             {
-                name: 'Básico (recomendado)',
-                value: 'base'
+                name: 'Admin (Recomendado)',
+                value: 'admin'
             },
             {
-                name: 'Admin',
-                value: 'admin'
+                name: 'Básico',
+                disabled: true,
+                value: 'base'
             }
         ],
         default: 'base'
