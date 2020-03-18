@@ -32,7 +32,7 @@ yarn mock
 ## Features
 
 - [x] App structure (base/admin)
-- [ ] README.md | CONTRIBUTING.md
+- [x] README.md | CONTRIBUTING.md
 - [x] Pasta pages -> modules
 - [x] Mover forms/ pra modules/x/forms
 - [x] Pasta services -> network
