@@ -37,7 +37,6 @@ yarn mock
 - [x] Mover forms/ pra modules/x/forms
 - [x] Pasta services -> network
 - [ ] Services em cada módulo
-- [ ] Vuepress
 - [x] CRUD example
     - [x] Mock
     - [x] Form
