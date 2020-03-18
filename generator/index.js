@@ -30,7 +30,6 @@ module.exports = (api, { preset = 'base' }) => {
             axios: "^0.19.2"
         },
         devDependencies: {
-            "lint-staged": "^10.0.8",
             "json-server": "^0.16.1"
         },
         scripts: {
