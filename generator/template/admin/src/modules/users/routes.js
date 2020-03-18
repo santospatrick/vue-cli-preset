@@ -1,5 +1,5 @@
-import Index from './Index.vue';
-import Form from './Form.vue';
+import Index from './pages/Index.vue';
+import Form from './pages/Form.vue';
 
 export default [
   {

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UserForm from '@/forms/User.vue';
+import UserForm from '@/modules/users/forms/Register.vue';
 import { mapActions, mapState, mapMutations } from 'vuex';
 
 export default {

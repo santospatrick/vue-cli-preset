@@ -32,12 +32,11 @@ yarn mock
 ## Features
 
 - [x] App structure (base/admin)
-- [ ] README.md | CONTRIBUTING.md
-- [ ] Pasta pages -> modules
-- [ ] Mover forms/ pra modules/x/forms
-- [ ] Pasta services -> network
-- [ ] Services em cada módulo
-- [ ] Vuepress
+- [x] README.md | CONTRIBUTING.md
+- [x] Pasta pages -> modules
+- [x] Mover forms/ pra modules/x/forms
+- [x] Pasta services -> network
+- [x] Services em cada módulo
 - [x] CRUD example
     - [x] Mock
     - [x] Form

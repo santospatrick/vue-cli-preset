@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <v-container id="nav">
-      <router-link to="/">Login</router-link> |
-      <router-link to="/users">Users</router-link>
+      <router-link to="/">Dashboard</router-link> |
+      <router-link to="/users">Usuários</router-link>
     </v-container>
     <v-app>
       <router-view/>
