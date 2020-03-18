@@ -36,7 +36,7 @@ yarn mock
 - [x] Pasta pages -> modules
 - [x] Mover forms/ pra modules/x/forms
 - [x] Pasta services -> network
-- [ ] Services em cada módulo
+- [x] Services em cada módulo
 - [x] CRUD example
     - [x] Mock
     - [x] Form
